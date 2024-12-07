@@ -102,5 +102,24 @@ public class GlobalExceptionHandler {
     public ErrorResponse handleInvalidScheduleException(InvalidScheduleException exception) {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
     }
+
+    /*Document Entity */
+    @ExceptionHandler(value = DocumentWithUrlAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleDocumentAlreadyExistsException(DocumentWithUrlAlreadyExistsException exception){
+        return new ErrorResponse(HttpStatus.CONFLICT.value(),exception.getMessage());
+    }
+
+    @ExceptionHandler(value = DocumentDoesNotExistsException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleDocumentDoesNotExist(DocumentDoesNotExistsException exception){
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value(),exception.getMessage());
+    }
+
+    @ExceptionHandler(value = InvalidDocumentException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleInvalidDocumentException(InvalidDocumentException exception){
+        return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage());
+    }
 }
 
