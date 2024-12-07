@@ -121,5 +121,12 @@ public class GlobalExceptionHandler {
     public ErrorResponse handleInvalidDocumentException(InvalidDocumentException exception){
         return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage());
     }
+
+    /*Card Entity */
+    @ExceptionHandler(value = CardNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleCardNotFoundException(CardNotFoundException exception){
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value(), exception.getMessage());
+    }
 }
 
