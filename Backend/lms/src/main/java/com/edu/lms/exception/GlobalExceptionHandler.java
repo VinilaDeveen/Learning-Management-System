@@ -45,5 +45,43 @@ public class GlobalExceptionHandler {
     public ErrorResponse handleInvalidStudentException(InvalidStudentException exception) {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
     }
+
+    /*Exam entity */
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleIllegalArgumentException(IllegalArgumentException exception) {
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
+    }
+
+
+    @ExceptionHandler(value = ExamAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleExamAlreadyExists(ExamAlreadyExistsException exception) {
+        return new ErrorResponse(HttpStatus.CONFLICT.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = ExamNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleExamNotFound(ExamNotFoundException exception) {
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = InvalidExamMarkException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleInvalidMark(InvalidExamMarkException exception) {
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = ExamMarkAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleExamMarkAlreadyExists(ExamAlreadyExistsException exception) {
+        return new ErrorResponse(HttpStatus.CONFLICT.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleGeneralException(Exception exception) {
+        return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage());
+    }
 }
 
