@@ -10,6 +10,9 @@ import AddStudent from './pages/addtudent/AddStudent';
 import Examtable from './component/examtable/Examtable';
 import AddExam from './pages/addexam/AddExam';
 import Marktable from './component/marktamble/Marktable';
+import Scheduletble from './component/scheduletable/Scheduletble';
+import AddSchedule from './pages/addschedule/AddSchedule';
+import ScheduleView from './pages/scheduleview/ScheduleView';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
               <Route path='/examtable' element={<Examtable/>}/>
               <Route path='/examtable/addExam' element={<AddExam/>}/>
               <Route path='/examtable/:examId' element={<Marktable/>}/>
+              <Route path='/scheduletable' element={<Scheduletble/>}/>
+              <Route path='/scheduletable/addschedule' element={<AddSchedule/>}/>
+              <Route path='/scheduletable/:id' element={<ScheduleView/>}/>
             </Route>
             <Route path='/' element={<AdminLogin/>}/>
             <Route path='/register' element={<AdminReg/>}/>
