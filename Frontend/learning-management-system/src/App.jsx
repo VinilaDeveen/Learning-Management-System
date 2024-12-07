@@ -16,6 +16,8 @@ import ScheduleView from './pages/scheduleview/ScheduleView';
 import DocumentTable from './component/documenttable/DocumentTable';
 import DocumentView from './pages/documentView/DocumentView';
 import AddDocument from './pages/adddocument/AddDocument';
+import FeeCardTable from './component/feecardtable/FeeCardTable';
+import MarkAttendance from './pages/markattendence/MarkAttendence';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
               <Route path='/documenttable' element={<DocumentTable/>}/>
               <Route path='/documenttable/:id' element={<DocumentView/>}/>
               <Route path='/documenttable/adddocument' element={<AddDocument/>}/>
+              <Route path='/feecardtable/:studId' element={<FeeCardTable/>}/>
+              <Route path='/markAttendance/:cardId' element={<MarkAttendance/>}/>
             </Route>
             <Route path='/' element={<AdminLogin/>}/>
             <Route path='/register' element={<AdminReg/>}/>
