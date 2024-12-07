@@ -5,6 +5,8 @@ import './App.css'
 import AdminLogin from './pages/auth/AdminLogin'
 import AdminReg from './pages/adminreg/AdminReg'
 import Studenttable from './component/studenttable/Studenttable';
+import StudentView from './pages/studentview/StudentView';
+import AddStudent from './pages/addtudent/AddStudent';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Routes>
             <Route element={<ProtectedRoute/>}>
               <Route path='studenttable' element={<Studenttable/>}/>
+              <Route path='/studenttable/:studId' element={<StudentView/>}/>
+              <Route path='/addStudent' element={<AddStudent/>}/>
             </Route>
             <Route path='/' element={<AdminLogin/>}/>
             <Route path='/register' element={<AdminReg/>}/>
