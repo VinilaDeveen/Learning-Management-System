@@ -13,6 +13,9 @@ import Marktable from './component/marktamble/Marktable';
 import Scheduletble from './component/scheduletable/Scheduletble';
 import AddSchedule from './pages/addschedule/AddSchedule';
 import ScheduleView from './pages/scheduleview/ScheduleView';
+import DocumentTable from './component/documenttable/DocumentTable';
+import DocumentView from './pages/documentView/DocumentView';
+import AddDocument from './pages/adddocument/AddDocument';
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
               <Route path='/scheduletable' element={<Scheduletble/>}/>
               <Route path='/scheduletable/addschedule' element={<AddSchedule/>}/>
               <Route path='/scheduletable/:id' element={<ScheduleView/>}/>
+              <Route path='/documenttable' element={<DocumentTable/>}/>
+              <Route path='/documenttable/:id' element={<DocumentView/>}/>
+              <Route path='/documenttable/adddocument' element={<AddDocument/>}/>
             </Route>
             <Route path='/' element={<AdminLogin/>}/>
             <Route path='/register' element={<AdminReg/>}/>
