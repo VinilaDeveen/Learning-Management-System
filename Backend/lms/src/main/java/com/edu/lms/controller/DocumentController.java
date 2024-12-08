@@ -43,7 +43,7 @@ public class DocumentController {
     }
 
     /* Update */
-    @PutMapping("/updateById/{id}")
+    @PutMapping("/{id}")
     public String updateDocument(@PathVariable Long id, @RequestBody Document document){
         return documentService.updateDocument(id,document);
     }
