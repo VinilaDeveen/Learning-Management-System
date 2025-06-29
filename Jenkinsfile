@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     tools {
-        maven 'Maven-3.9.0' // Configure in Jenkins Global Tool Configuration
-        nodejs 'NodeJS-18'  // Configure in Jenkins Global Tool Configuration
+        maven 'Maven-3.4.0' // Configure in Jenkins Global Tool Configuration
+        nodejs 'NodeJS-23.10.0'  // Configure in Jenkins Global Tool Configuration
     }
     
     environment {
